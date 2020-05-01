@@ -1,10 +1,10 @@
 ---
 published: false
-title: "Your title"
-cover_image: "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/master/blog-posts/NAME-OF-YOUR-BLOG-POST/assets/your-asset.png"
-description: "Description of the article"
-tags: tag1, tag2, tag3
-series:
+title: "Smart Constructors"
+cover_image: "https://github.com/idkjs/reason-logo/blob/master/reason-ocaml-images/logo.png"
+description: "Implementing ReasonML Design Patterns"
+tags: reasonml, designpatterns, ocaml
+series: "Reason Design Patterns"
 canonical_url:
 ---
 
@@ -20,7 +20,9 @@ You can also take advantage of [embedme](https://github.com/zakhenry/embedme) to
 interface A {
   hello: string;
 }
+
 ```
+
 
 # Found a typo?
 
