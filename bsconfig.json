@@ -1,0 +1,23 @@
+{
+  "name": "devto",
+  "namespace": false,
+  "reason": { "react-jsx": 3 },
+  "refmt": 3,
+  "bs-dependencies": [],
+  "ppx-flags": [],
+  "sources": [
+    { "dir": "blog-posts", "subdirs": true }
+  ],
+	"ignored-dirs": [ "blog-posts/patterns/interpreter" ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors", "-bs-g"],
+  "gentypeconfig": {
+    "language": "untyped",
+    "shims": [],
+    "module": "es6"
+  }
+}

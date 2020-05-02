@@ -1,0 +1,95 @@
+gentypeconfig = -bs-gentype /Users/mandalarian/Github/RealWorld/dev.to/node_modules/gentype/gentype.exe
+g_pkg_flg = -bs-package-name devto
+src_root_dir = /Users/mandalarian/Github/RealWorld/dev.to
+bsc = /Users/mandalarian/.fnm/node-versions/v13.11.0/installation/lib/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/mandalarian/.fnm/node-versions/v13.11.0/installation/lib/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings = 
+bsc_flags = -bs-no-version-header -bs-super-errors -bs-g
+ppx_flags = 
+g_dpkg_incls = 
+g_ns = 
+bsb_dir_group = 0
+g_lib_incls = -I blog-posts/patterns/smart_constructors -I blog-posts/patterns/one-module-one-thing -I blog-posts/patterns/providing-evidence -I blog-posts/patterns/constructor-view -I blog-posts/patterns/pretend_modules -I blog-posts/patterns/interface-first -I blog-posts/patterns/boolean-blindness -I blog-posts/patterns/private_types -I blog-posts/patterns/100-named-args-functions -I blog-posts/reason-design-patterns/code
+rule build_ast_from_re
+  command = $bsc  $warnings -color always -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
+  description = [34mBuilding[39m [2m${out}[22m
+build  blog-posts/reason-design-patterns/code/demoCode.reast : build_ast_from_re $src_root_dir/blog-posts/reason-design-patterns/code/demoCode.re
+rule build_deps
+  command = $bsdep -hash 641964e2c0327dce8a3b675639f5b3b0 $g_ns -g $bsb_dir_group $in
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  blog-posts/reason-design-patterns/code/demoCode.d : build_deps blog-posts/reason-design-patterns/code/demoCode.reast
+rule ml_cmj_cmi
+  command = $bsc $g_pkg_flg -color always -bs-suffix $g_lib_incls $warnings $bsc_flags $gentypeconfig -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  blog-posts/reason-design-patterns/code/demoCode.cmj |  blog-posts/reason-design-patterns/code/demoCode.cmi $src_root_dir/blog-posts/reason-design-patterns/code/demoCode.bs.js : ml_cmj_cmi blog-posts/reason-design-patterns/code/demoCode.reast ||  blog-posts/reason-design-patterns/code/demoCode.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/reason-design-patterns/code
+build  blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.re
+build  blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.d : build_deps blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.reast
+build  blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.cmj |  blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.cmi $src_root_dir/blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.bs.js : ml_cmj_cmi blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.reast ||  blog-posts/patterns/100-named-args-functions/HundredNamedArgsFunctions.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/100-named-args-functions
+build  blog-posts/patterns/private_types/PrivateTypes.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/private_types/PrivateTypes.re
+build  blog-posts/patterns/private_types/PrivateTypes.d : build_deps blog-posts/patterns/private_types/PrivateTypes.reast
+build  blog-posts/patterns/private_types/PrivateTypes.cmj |  blog-posts/patterns/private_types/PrivateTypes.cmi $src_root_dir/blog-posts/patterns/private_types/PrivateTypes.bs.js : ml_cmj_cmi blog-posts/patterns/private_types/PrivateTypes.reast ||  blog-posts/patterns/private_types/PrivateTypes.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/private_types
+build  blog-posts/patterns/boolean-blindness/BooleanBlindness.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/boolean-blindness/BooleanBlindness.re
+build  blog-posts/patterns/boolean-blindness/BooleanBlindness.d : build_deps blog-posts/patterns/boolean-blindness/BooleanBlindness.reast
+build  blog-posts/patterns/boolean-blindness/BooleanBlindness.cmj |  blog-posts/patterns/boolean-blindness/BooleanBlindness.cmi $src_root_dir/blog-posts/patterns/boolean-blindness/BooleanBlindness.bs.js : ml_cmj_cmi blog-posts/patterns/boolean-blindness/BooleanBlindness.reast ||  blog-posts/patterns/boolean-blindness/BooleanBlindness.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/boolean-blindness
+build  blog-posts/patterns/interface-first/InterfaceFirst.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/interface-first/InterfaceFirst.re
+build  blog-posts/patterns/interface-first/InterfaceFirst.d : build_deps blog-posts/patterns/interface-first/InterfaceFirst.reast
+build  blog-posts/patterns/interface-first/InterfaceFirst.cmj |  blog-posts/patterns/interface-first/InterfaceFirst.cmi $src_root_dir/blog-posts/patterns/interface-first/InterfaceFirst.bs.js : ml_cmj_cmi blog-posts/patterns/interface-first/InterfaceFirst.reast ||  blog-posts/patterns/interface-first/InterfaceFirst.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/interface-first
+build  blog-posts/patterns/pretend_modules/PretendModules.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/pretend_modules/PretendModules.re
+build  blog-posts/patterns/pretend_modules/PretendModules.d : build_deps blog-posts/patterns/pretend_modules/PretendModules.reast blog-posts/patterns/pretend_modules/PretendModules.reiast
+build  blog-posts/patterns/pretend_modules/PretendModules.reiast : build_ast_from_re $src_root_dir/blog-posts/patterns/pretend_modules/PretendModules.rei
+rule ml_cmi
+  command = $bsc $g_pkg_flg -color always -bs-suffix $g_lib_incls $warnings $bsc_flags $gentypeconfig -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  blog-posts/patterns/pretend_modules/PretendModules.cmi : ml_cmi blog-posts/patterns/pretend_modules/PretendModules.reiast ||  blog-posts/patterns/pretend_modules/PretendModules.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/pretend_modules
+rule ml_cmj_only
+  command = $bsc $g_pkg_flg -color always -bs-suffix -bs-read-cmi $g_lib_incls $warnings $bsc_flags $gentypeconfig -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  blog-posts/patterns/pretend_modules/PretendModules.cmj |  $src_root_dir/blog-posts/patterns/pretend_modules/PretendModules.bs.js : ml_cmj_only blog-posts/patterns/pretend_modules/PretendModules.reast |  blog-posts/patterns/pretend_modules/PretendModules.cmi ||  blog-posts/patterns/pretend_modules/PretendModules.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/pretend_modules
+build  blog-posts/patterns/constructor-view/ConstructorView1.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/constructor-view/ConstructorView1.re
+build  blog-posts/patterns/constructor-view/ConstructorView1.d : build_deps blog-posts/patterns/constructor-view/ConstructorView1.reast
+build  blog-posts/patterns/constructor-view/ConstructorView1.cmj |  blog-posts/patterns/constructor-view/ConstructorView1.cmi $src_root_dir/blog-posts/patterns/constructor-view/ConstructorView1.bs.js : ml_cmj_cmi blog-posts/patterns/constructor-view/ConstructorView1.reast ||  blog-posts/patterns/constructor-view/ConstructorView1.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/constructor-view
+build  blog-posts/patterns/constructor-view/ConstructorView2.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/constructor-view/ConstructorView2.re
+build  blog-posts/patterns/constructor-view/ConstructorView2.d : build_deps blog-posts/patterns/constructor-view/ConstructorView2.reast
+build  blog-posts/patterns/constructor-view/ConstructorView2.cmj |  blog-posts/patterns/constructor-view/ConstructorView2.cmi $src_root_dir/blog-posts/patterns/constructor-view/ConstructorView2.bs.js : ml_cmj_cmi blog-posts/patterns/constructor-view/ConstructorView2.reast ||  blog-posts/patterns/constructor-view/ConstructorView2.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/constructor-view
+build  blog-posts/patterns/constructor-view/ConstructorViewFinal.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/constructor-view/ConstructorViewFinal.re
+build  blog-posts/patterns/constructor-view/ConstructorViewFinal.d : build_deps blog-posts/patterns/constructor-view/ConstructorViewFinal.reast
+build  blog-posts/patterns/constructor-view/ConstructorViewFinal.cmj |  blog-posts/patterns/constructor-view/ConstructorViewFinal.cmi $src_root_dir/blog-posts/patterns/constructor-view/ConstructorViewFinal.bs.js : ml_cmj_cmi blog-posts/patterns/constructor-view/ConstructorViewFinal.reast ||  blog-posts/patterns/constructor-view/ConstructorViewFinal.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/constructor-view
+build  blog-posts/patterns/providing-evidence/Roles.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/providing-evidence/Roles.re
+build  blog-posts/patterns/providing-evidence/Roles.d : build_deps blog-posts/patterns/providing-evidence/Roles.reast blog-posts/patterns/providing-evidence/Roles.reiast
+build  blog-posts/patterns/providing-evidence/Roles.reiast : build_ast_from_re $src_root_dir/blog-posts/patterns/providing-evidence/Roles.rei
+build  blog-posts/patterns/providing-evidence/Roles.cmi : ml_cmi blog-posts/patterns/providing-evidence/Roles.reiast ||  blog-posts/patterns/providing-evidence/Roles.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/providing-evidence
+build  blog-posts/patterns/providing-evidence/Roles.cmj |  $src_root_dir/blog-posts/patterns/providing-evidence/Roles.bs.js : ml_cmj_only blog-posts/patterns/providing-evidence/Roles.reast |  blog-posts/patterns/providing-evidence/Roles.cmi ||  blog-posts/patterns/providing-evidence/Roles.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/providing-evidence
+build  blog-posts/patterns/providing-evidence/ProvidingEvidence.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/providing-evidence/ProvidingEvidence.re
+build  blog-posts/patterns/providing-evidence/ProvidingEvidence.d : build_deps blog-posts/patterns/providing-evidence/ProvidingEvidence.reast blog-posts/patterns/providing-evidence/ProvidingEvidence.reiast
+build  blog-posts/patterns/providing-evidence/ProvidingEvidence.reiast : build_ast_from_re $src_root_dir/blog-posts/patterns/providing-evidence/ProvidingEvidence.rei
+build  blog-posts/patterns/providing-evidence/ProvidingEvidence.cmi : ml_cmi blog-posts/patterns/providing-evidence/ProvidingEvidence.reiast ||  blog-posts/patterns/providing-evidence/ProvidingEvidence.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/providing-evidence
+build  blog-posts/patterns/providing-evidence/ProvidingEvidence.cmj |  $src_root_dir/blog-posts/patterns/providing-evidence/ProvidingEvidence.bs.js : ml_cmj_only blog-posts/patterns/providing-evidence/ProvidingEvidence.reast |  blog-posts/patterns/providing-evidence/ProvidingEvidence.cmi ||  blog-posts/patterns/providing-evidence/ProvidingEvidence.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/providing-evidence
+build  blog-posts/patterns/one-module-one-thing/OneModuleOneThing.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/one-module-one-thing/OneModuleOneThing.re
+build  blog-posts/patterns/one-module-one-thing/OneModuleOneThing.d : build_deps blog-posts/patterns/one-module-one-thing/OneModuleOneThing.reast
+build  blog-posts/patterns/one-module-one-thing/OneModuleOneThing.cmj |  blog-posts/patterns/one-module-one-thing/OneModuleOneThing.cmi $src_root_dir/blog-posts/patterns/one-module-one-thing/OneModuleOneThing.bs.js : ml_cmj_cmi blog-posts/patterns/one-module-one-thing/OneModuleOneThing.reast ||  blog-posts/patterns/one-module-one-thing/OneModuleOneThing.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/one-module-one-thing
+build  blog-posts/patterns/smart_constructors/SmartConstructors.reast : build_ast_from_re $src_root_dir/blog-posts/patterns/smart_constructors/SmartConstructors.re
+build  blog-posts/patterns/smart_constructors/SmartConstructors.d : build_deps blog-posts/patterns/smart_constructors/SmartConstructors.reast
+build  blog-posts/patterns/smart_constructors/SmartConstructors.cmj |  blog-posts/patterns/smart_constructors/SmartConstructors.cmi $src_root_dir/blog-posts/patterns/smart_constructors/SmartConstructors.bs.js : ml_cmj_cmi blog-posts/patterns/smart_constructors/SmartConstructors.reast ||  blog-posts/patterns/smart_constructors/SmartConstructors.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:blog-posts/patterns/smart_constructors

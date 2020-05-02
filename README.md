@@ -72,3 +72,10 @@ https://dev.to/\<YOUR DEV.TO NICKNAME\>
 ## Blog posts
 
 - [\<BLOG POST NAME\>](https://dev.to/\<BLOG POST LINK\>)
+
+```sh
+for file in *.md
+do
+  mv "$file" "${file%.md}.mdx"
+done
+```

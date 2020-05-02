@@ -8,7 +8,8 @@
 		"prettier": "prettier",
 		"test": "node scripts/test-examples.js",
 		"embedme": "embedme blog-posts/**/*.md",
-		"prettier:base": "yarn run prettier \"**/*.{js,json,scss,md,ts,html,component.html}\"",
+    "prettier:base": "yarn run prettier \"**/*.{js,json,scss,md,ts,html,component.html}\" && yarn format:re",
+    "format:re": "find . -name \"*.re\" -or -name \"*.rei\" | grep -v \"node_modules\" | xargs bsrefmt --in-place",
 		"prettier:write": "yarn run prettier:base --write",
 		"prettier:check": "yarn run prettier:base --list-different",
 		"embedme:check": "yarn run embedme --verify",
@@ -21,6 +22,8 @@
 		"prettier": "2.0.5"
 	},
 	"devDependencies": {
+		"bs-platform": "^7.3.1",
+		"gentype": "^3.21.0",
 		"remark-parse": "^8.0.2",
 		"remark-stringify": "^8.0.0",
 		"unified": "^9.0.0"

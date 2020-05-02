@@ -24,7 +24,7 @@ To work around this issue, before this release, we did a small codegen
 optimization, for a function of type `unit -> unit`, if its argument is not
 used, we remove its argument in the output.
 
-```reason
+```re prelude
 let f: unit => int = () => 3;
 let f_used: unit => unit = x => Js.log(x);
 ```
@@ -51,7 +51,7 @@ support later.
 
 Therefore, we generate JS code in a more consistent style in this release:
 
-```reason
+```re prelude
 let f: unit => int = () => 3;
 ```
 
@@ -69,7 +69,7 @@ but it can not provide any guarantee.
 Since we removed the trick, the curried runtime does not treat function of
 arity 0 and arity 1 in the same way, so if you have code like this
 
-```reason
+```re prelude
 let f: unit => int = [%bs.raw {|function () {
   return 3
 }|}];
@@ -77,7 +77,7 @@ let f: unit => int = [%bs.raw {|function () {
 
 It is not correct any more, the fix would be:
 
-```reason
+```re prelude
 let f: unit => int = [%bs.raw {|function(param) {
   return 3
 }|}];
@@ -85,7 +85,7 @@ let f: unit => int = [%bs.raw {|function(param) {
 
 Or
 
-```reason
+```re prelude
 let f: (. unit) => int = [%bs.raw {|function() {
   return 3
 }|}];

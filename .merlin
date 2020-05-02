@@ -1,0 +1,26 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/Users/mandalarian/.fnm/node-versions/v13.11.0/installation/lib/node_modules/bs-platform/darwin/bsc.exe -as-ppx -bs-jsx 3'
+S /Users/mandalarian/Github/RealWorld/dev.to/node_modules/bs-platform/lib/ocaml
+B /Users/mandalarian/Github/RealWorld/dev.to/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S blog-posts/reason-design-patterns/code
+B lib/bs/blog-posts/reason-design-patterns/code
+S blog-posts/patterns/100-named-args-functions
+B lib/bs/blog-posts/patterns/100-named-args-functions
+S blog-posts/patterns/private_types
+B lib/bs/blog-posts/patterns/private_types
+S blog-posts/patterns/boolean-blindness
+B lib/bs/blog-posts/patterns/boolean-blindness
+S blog-posts/patterns/interface-first
+B lib/bs/blog-posts/patterns/interface-first
+S blog-posts/patterns/pretend_modules
+B lib/bs/blog-posts/patterns/pretend_modules
+S blog-posts/patterns/constructor-view
+B lib/bs/blog-posts/patterns/constructor-view
+S blog-posts/patterns/providing-evidence
+B lib/bs/blog-posts/patterns/providing-evidence
+S blog-posts/patterns/one-module-one-thing
+B lib/bs/blog-posts/patterns/one-module-one-thing
+S blog-posts/patterns/smart_constructors
+B lib/bs/blog-posts/patterns/smart_constructors
+####BSB GENERATED: NO EDIT}
