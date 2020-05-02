@@ -1,5 +1,10 @@
 # One way publishing of your blog posts from a git repo to dev.to
 
+## [dev-to-git-cli](https://github.com/maxime1992/dev-to-git)
+
+Install with `yarn add -D dev-to-git`.
+Add a script t
+
 ## First, what is dev.to?
 
 https://dev.to is a free and open source blogging platform for developers.

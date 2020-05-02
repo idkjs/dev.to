@@ -67,7 +67,7 @@ const processor = unified()
   .use(stringify)
   .use(candidates);
 
-const MD_DIR = path.join(__dirname, "../pages");
+const MD_DIR = path.join(__dirname, "../blog-posts/reason-design-patterns");
 
 const BSC = path.join(__dirname, "../node_modules/.bin/bsc");
 
