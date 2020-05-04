@@ -1,4 +1,10 @@
-[{
-  "id":325393,
-  "relativePathToArticle": "blog-posts/reason-design-patterns/reason-design-patterns.md"
-}]
+[
+	{
+		"id": 325393,
+		"relativePathToArticle": "blog-posts/reason-design-patterns/reason-design-patterns.md"
+	},
+	{
+		"id": 326676,
+		"relativePathToArticle": "blog-posts/updating-old-reasonml-code.md"
+	}
+]
