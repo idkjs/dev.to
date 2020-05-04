@@ -13,7 +13,8 @@ I have this riduculous process for figuring things out with [reasonml](https://r
 
 A lot of the time, that code is in old `reasonml` syntax or in `ocaml`. I end up learning the `ocaml`, converting it to `reasonml` or often times, updating old projects until they work again.
 
-Today, for example, I discovered [`Iwan Karamazow's`](https://github.com/IwanKaramazow) git repos. Had to know what his 4 year old [transducers.re](https://github.com/IwanKaramazow/transducers.re) was about. So I forked and updated it until it [compiled](https://github.com/idkjs/transducers.re). I still can't figure out how to call the functions and asked him about it. We will see if he is still interested in it. That led me to some more old code demonstrating `transducers` in [@oddlyfunctional](https://twitter.com/oddlyfunctional)'s [oddlyfunctional/bs-transducers](https://github.com/oddlyfunctional/bs-transducers), which then sent me to to his 2 year old[form-builder-reasonml](https://github.com/oddlyfunctional/form-builder-reasonml) repo which is the subject of this code study today.
+Today, for example, I discovered [`Iwan Karamazow's`](https://github.com/IwanKaramazow) git repos. Had to know what his 4 year old [transducers.re](https://github.com/IwanKaramazow/transducers.re) was about. So I forked and updated it until it [compiled](https://github.com/idkjs/transducers.re). I still can't figure out how to call the functions and asked him about it. We will see if he is still interested in it. That led me to some more old code demonstrating `transducers` in [@oddlyfunctional](https://twitter.com/oddlyfunctional)'s [oddlyfunctional/bs-transducers](https://github.com/oddlyfunctional/bs-transducers), which then sent me to to his 2 year old
+[form-builder-reasonml](https://github.com/oddlyfunctional/form-builder-reasonml) repo which is the subject of this code study today.
 
 Thank you to Iwan and Mario for sharing their transducers!
 
