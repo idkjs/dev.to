@@ -25,7 +25,7 @@ type do_admin_stuff = Admin.t => unit;
 let user: User.t = {name: "Joe Camel", role: User};
 let admin: option(Admin.t) = Admin.from_user(user);
 let do_admin_stuff = (admin: Admin.t) =>
-  Js.log2("Doing " ++ "admin" ++ "Stuff",admin);
+  Js.log2("Doing " ++ "admin" ++ "Stuff", admin);
 
 let do_user_stuff = () => Js.log("Doing " ++ "user.name" ++ " Stuff");
 

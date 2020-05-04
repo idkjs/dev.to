@@ -1,15 +1,13 @@
 ---
-title: Updating Old ReasonML Code
+title: Learning ReasonML The Hard Way
 published: true
-description: Learning ReasonML The Hard Way
-tags: reasonml, ocaml, bash, scripts, github
-series:
-canonical_url:
+description: Updating Old ReasonML Code
+tags: reasonml, ocaml, bashscripts, github
+cover_image: https://dev-to-uploads.s3.amazonaws.com/i/d1yr5q6c2ahj0lobsqh3.png
 ---
 
-# Updating Old ReasonML Code with [bloodyowl/upgrade-reason-react-esy](https://github.com/bloodyowl/upgrade-reason-react-esy)
 
-# What Is This?
+# Learning to Code by Reading Code
 
 I have this riduculous process for figuring things out with [`reasonml`](https://reasonml.org). Basically it entails trying to do something, hitting a wall. Hitting the docs for whatever code I am trying to use, then rummaging around `Github` for some code that implements what I am trying to do.
 

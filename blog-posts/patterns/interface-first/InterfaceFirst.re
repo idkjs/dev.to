@@ -18,13 +18,19 @@ module BakeryLimited: {
     | Ordered;
   type stock = list(bread);
 };
-module BakeryLists : {
-  type bread = | Baked | Prepared | Ordered;
+module BakeryLists: {
+  type bread =
+    | Baked
+    | Prepared
+    | Ordered;
   type stock;
-  let has_in_stock : (bread, stock) => bool;
-  let add : (bread, stock) => stock;
+  let has_in_stock: (bread, stock) => bool;
+  let add: (bread, stock) => stock;
 } = {
-  type bread = | Baked | Prepared | Ordered;
+  type bread =
+    | Baked
+    | Prepared
+    | Ordered;
   type stock = list(bread);
   let has_in_stock = List.mem;
   let add = List.cons;

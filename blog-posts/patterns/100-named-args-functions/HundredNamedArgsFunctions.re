@@ -86,7 +86,7 @@ module Shopping_session: {
   let make = (~user: User.t, ~cart: Cart.t) => {
     {user, cart};
   };
-};
+} /* } /*   result(_, _)*/*/;
 // TODO: implement purchase_item function
 // let purchase_item:
 //   (
@@ -100,4 +100,3 @@ module Shopping_session: {
 // let purchase_item = (~sess: Shopping_session.t, ~prefs: Purchase_preference.t) => {
 //   sess,
 //   prefs,
-// } /*   result(_, _)*/;

@@ -1,4 +1,3 @@
-
 module User: {
   type t;
   let make: (~name: string, ~age: int) => option(t);

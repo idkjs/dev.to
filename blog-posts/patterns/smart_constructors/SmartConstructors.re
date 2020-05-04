@@ -48,7 +48,8 @@ module EmailToString: {
   let to_string: t => string = email => email;
 };
 
-let me: option(EmailToString.t) = EmailToString.make("leandro@reasonsthlm.se");
+let me: option(EmailToString.t) =
+  EmailToString.make("leandro@reasonsthlm.se");
 let me2 = EmailToString.make("leandro@reasonsthlm.se");
 
 switch (me) {

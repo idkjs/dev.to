@@ -22,7 +22,7 @@ module Admin: {
 let user: User.t = {name: "Joe Camel", role: User};
 let admin: option(Admin.t) = Admin.from_user(user);
 let do_admin_stuff = (admin: Admin.t) =>
-  Js.log2("Doing " ++ "admin.name" ++ "Stuff",admin);
+  Js.log2("Doing " ++ "admin.name" ++ "Stuff", admin);
 
 let do_user_stuff = (user: User.t) =>
   Js.log("Doing " ++ user.name ++ " `User` Stuff");
@@ -35,7 +35,7 @@ switch (admin) {
 let user: User.t = {name: "Joe Camel", role: Admin};
 let admin: option(Admin.t) = Admin.from_user(user);
 let do_admin_stuff = (admin: Admin.t) =>
-  Js.log2("Doing " ++ "admin.name" ++ "Stuff",admin);
+  Js.log2("Doing " ++ "admin.name" ++ "Stuff", admin);
 
 let do_user_stuff = (user: User.t) =>
   Js.log("Doing " ++ user.name ++ " `User` Stuff");

@@ -1,4 +1,3 @@
-
 type car_status =
   | New
   | Used(int)

@@ -35,5 +35,4 @@ module PrivateUser: {
 };
 
 let _ = PrivateUser.make(~name="me", ~age=30);
-/**  Cannot create values of the private type PrivateUser.t */
-// let _ = {PrivateUser.name: "me", age: 30};
+/**  Cannot create values of the private type PrivateUser.t */ /* let _ = {PrivateUser.name: "me", age: 30}*/;
