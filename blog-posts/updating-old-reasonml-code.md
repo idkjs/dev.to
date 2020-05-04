@@ -138,7 +138,7 @@ Done in 0.34s.
 ```
 Doing this will let us be a little more effecient with some terminal scripts later.
 
-# Updating Strings
+## Updating Strings
 
 `@bloodyowl` again:
 
@@ -255,7 +255,7 @@ npm i https://github.com/bloodyowl/reason-react
 npm i reason-react-update reason-react-compat
 ```
 
-# Change JSX version in bsconfig.json
+## Change JSX version in bsconfig.json
 ```json
  "reason": {
 -  "react-jsx": 2
@@ -327,7 +327,7 @@ $ bsb -make-world -w
 >>>> Start compiling 
 ```
 
-# Working Through Errors
+## Working Through Errors
 
 The first error we see is knuckleheadish: `Error: Unbound module ReactCompat`.
 
