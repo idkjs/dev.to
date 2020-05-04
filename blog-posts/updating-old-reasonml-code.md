@@ -9,7 +9,7 @@ cover_image: https://dev-to-uploads.s3.amazonaws.com/i/d1yr5q6c2ahj0lobsqh3.png
 
 # Learning to Code by Reading Code
 
-I have this riduculous process for figuring things out with [`reasonml`](https://reasonml.org). Basically it entails trying to do something, hitting a wall. Hitting the docs for whatever code I am trying to use, then rummaging around `Github` for some code that implements what I am trying to do.
+I have this riduculous process for figuring things out with [reasonml](https://reasonml.org). Basically it entails trying to do something, hitting a wall. Hitting the docs for whatever code I am trying to use, then rummaging around Github for some code that implements what I am trying to do.
 
 A lot of the time, that code is in old `reasonml` syntax or in `ocaml`. I end up learning the `ocaml`, converting it to `reasonml` or often times, updating old projects until they work again.
 
